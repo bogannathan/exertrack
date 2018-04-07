@@ -67,7 +67,7 @@ router.post('/upload-image', function(req, res) {
 
 router.get('/image', function(req, res) {
 	let userid = req.user.id
-
+	console.log(req)
 	Image
 		.find({
 			where: {owner: userid}
