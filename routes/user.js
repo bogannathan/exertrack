@@ -69,7 +69,7 @@ router.put('/upload-image', function(req, res) {
 
 router.delete('/', function(req, res) {
 	let userid = req.user.id
-	Log
+	Image
 		.destroy({
 			where: {owner: userid}
 		}).then(
