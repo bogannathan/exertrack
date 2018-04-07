@@ -1,6 +1,7 @@
 let router = require('express').Router()
 let sequelize = require('../db.js')
 let User = sequelize.import('../models/user')
+let Image = sequelize.import('../models/image')
 let bcrypt = require('bcryptjs')
 let jwt = require('jsonwebtoken')
 
@@ -38,6 +39,44 @@ router.post('/', function(req, res) {
 			res.send(500, err.message)
 		}
 	)
+})
+
+router.post('/upload-image', function(req, res) {
+	let user = req.user
+	let imagelink = req.imagelink
+
+	Log
+		.create({
+			imagelink: imagelink,
+			owner: user.id
+		})
+		.then(
+			function createSuccess(log) {
+				res.json(log)	
+			},
+			function createError(err) {
+				// console.log('here is error')
+					res.send(400, err.message)
+			}
+		)
+})
+
+router.get('/image', function(req, res) {
+	let userid = req.user.id
+
+	Image
+		.find({
+			where: {owner: userid}
+		})
+		.then(
+			function findSuccess(link) {
+				res.json(link)	
+			},
+			function createError(err) {
+				// console.log('here is error')
+					res.send(400, err.message)
+			}
+		)
 })
 
 router.get('/', function(req, res) {
