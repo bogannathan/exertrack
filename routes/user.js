@@ -67,6 +67,21 @@ router.put('/upload-image', function(req, res) {
 		)
 })
 
+router.delete('/', function(req, res) {
+	let userid = req.user.id
+	Log
+		.destroy({
+			where: {owner: userid}
+		}).then(
+			function deleteLogSuccess(data) {
+				res.send("You removed a log")
+			},
+			function deleteLogError(err) {
+				res.send(500, err.message)
+			}
+		)
+})
+
 router.get('/image', function(req, res) {
 	let userid = req.user.id
 	console.log('get image', req)
