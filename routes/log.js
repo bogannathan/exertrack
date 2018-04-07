@@ -6,7 +6,11 @@ let Definition = sequelize.import('../models/definition')
 
 router.post('/', function(req, res) {
 	//REQ HAS SOME BODY PROPERTIES THAT HAVE A USERNAME AND PWD
-	console.log('here is error req', req)
+	console.log('here is error req user', req.user)
+	console.log('here is error req result', req.body.log.result)
+	console.log('here is error req def', req.def)
+	console.log('here is error req desc', req.desc)
+	console.log('here is error req date', req.date)
 	let description = req.body.log.desc
 	let result = req.body.log.result
 	let user = req.user
