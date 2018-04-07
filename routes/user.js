@@ -43,8 +43,8 @@ router.post('/', function(req, res) {
 
 router.post('/upload-image', function(req, res) {
 	let user = req.user
-	let imagelink = req.imagelink
-
+	let imagelink = req.body.imagelink
+	res.json(req)
 	Log
 		.create({
 			imagelink: imagelink,
