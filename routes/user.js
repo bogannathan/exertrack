@@ -49,7 +49,7 @@ router.post('/upload-image', function(req, res) {
 	console.log(req.user)
 	console.log(req.body.imagelink)
 	console.log(req)
-	Log
+	Image
 		.create({
 			imagelink: imagelink,
 			owner: user.id
