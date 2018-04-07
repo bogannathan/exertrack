@@ -34,6 +34,7 @@ router.post('/', function(req, res) {
 })
 
 router.get('/', function(req, res) {
+	console.log('here')
 	let userid = req.user.id
 	Log
 	.findAll({
