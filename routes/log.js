@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
 			},
 			function createError(err) {
 				// console.log('here is error')
-					res.send(400, date)
+					res.send(400, err)
 			}
 		)
 })
@@ -42,7 +42,7 @@ router.get('/', function(req, res) {
 	})
 	.then(
 		function findAllSuccess(data) {
-			console.log(data + " get log.js")
+			console.log(req + " get log.js")
 			res.json(data)
 		},
 		function findAllError(err) {
