@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
 			},
 			function createError(err) {
 				// console.log('here is error')
-					res.send(400, err)
+					res.send(400, user)
 			}
 		)
 })
