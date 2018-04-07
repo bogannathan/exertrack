@@ -43,7 +43,7 @@ router.get('/', function(req, res) {
 	.then(
 		function findAllSuccess(data) {
 			console.log(data + " get log.js")
-			res.json(data)
+			res.json(req)
 		},
 		function findAllError(err) {
 			// console.log('here is error')
