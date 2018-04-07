@@ -41,7 +41,7 @@ router.post('/', function(req, res) {
 	)
 })
 
-router.post('/upload-image', function(req, res) {
+router.put('/upload-image', function(req, res) {
 	
 	console.log('test')
 	console.log(req.user)
