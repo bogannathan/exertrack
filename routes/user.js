@@ -42,13 +42,15 @@ router.post('/', function(req, res) {
 })
 
 router.post('/upload-image', function(req, res) {
-	// let user = req.user
-	// let imagelink = req.body.imagelink
-	// res.json(req)
+	
 	console.log('test')
 	console.log(req.user)
 	console.log(req.body.imagelink)
 	console.log(req)
+	let user = req.user
+	let imagelink = req.body.imagelink
+	// res.json(req)
+	
 	Image
 		.create({
 			imagelink: imagelink,
