@@ -46,7 +46,7 @@ router.post('/upload-image', function(req, res) {
 	console.log('test')
 	console.log(req.user)
 	console.log(req.body.imagelink)
-	console.log(req)
+	console.log(req)	
 	let user = req.user
 	let imagelink = req.body.imagelink
 	// res.json(req)
@@ -69,7 +69,7 @@ router.post('/upload-image', function(req, res) {
 
 router.get('/image', function(req, res) {
 	let userid = req.user.id
-	console.log(req)
+	console.log('get image', req)
 	Image
 		.findAll({
 			where: {owner: userid}
