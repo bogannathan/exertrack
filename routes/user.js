@@ -42,8 +42,8 @@ router.post('/', function(req, res) {
 })
 
 router.post('/upload-image', function(req, res) {
-	let user = req.user
-	let imagelink = req.body.imagelink
+	// let user = req.user
+	// let imagelink = req.body.imagelink
 	// res.json(req)
 	console.log('test')
 	console.log(req.user)
@@ -69,11 +69,11 @@ router.get('/image', function(req, res) {
 	let userid = req.user.id
 	console.log(req)
 	Image
-		.find({
+		.findAll({
 			where: {owner: userid}
 		})
 		.then(
-			function findSuccess(link) {
+			function findAllSuccess(link) {
 				res.json(link)	
 			},
 			function createError(err) {
