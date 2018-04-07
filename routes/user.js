@@ -44,7 +44,7 @@ router.post('/', function(req, res) {
 router.post('/upload-image', function(req, res) {
 	let user = req.user
 	let imagelink = req.body.imagelink
-	res.json(req)
+	// res.json(req)
 	Log
 		.create({
 			imagelink: imagelink,
@@ -56,7 +56,7 @@ router.post('/upload-image', function(req, res) {
 			},
 			function createError(err) {
 				// console.log('here is error')
-					res.send(400, err.message)
+					res.send(400, req)
 			}
 		)
 })
