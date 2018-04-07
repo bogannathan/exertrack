@@ -11,7 +11,7 @@ router.post('/', function(req, res) {
 	let result = req.body.log.result
 	let user = req.user
 	let definition = req.body.log.def 
-	let date = req.body.log.date != undefined ? req.body.log.date : '2018/01/09'
+	let date = req.body.log.date
 
 	//use our sequelize model to create a log 
 	Log
